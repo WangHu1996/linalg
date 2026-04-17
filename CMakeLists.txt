@@ -5,7 +5,7 @@ project(linalg VERSION 1.0.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# 引入mdvector
+# 引入mdarray
 include(FetchContent)
 set(FETCHCONTENT_BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/.deps)
 option(BUILD_MD_DEMO "" OFF)
@@ -28,5 +28,5 @@ include(SelectSimd)
 # 头文件
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
-# 测试文件
-add_subdirectory(src)
+# 示例
+add_subdirectory(demo)
