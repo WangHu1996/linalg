@@ -1,2 +1,2 @@
 add_executable(demo demo.cc)
-target_link_libraries(demo PRIVATE mdvector::mdvector)
+target_link_libraries(demo PRIVATE mdarray::mdarray)
