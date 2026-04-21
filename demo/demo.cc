@@ -1,11 +1,15 @@
-#include "include_md_all.h"
+#include "dense/dense.h"
 
 #include <print>
 
 int main() {
-  md::vector<double, 2> vec(3, 3);
-  vec.set_arange();
-  vec.print();
+  linalg::dense_static<double, 3, 3, std::layout_right> m_s;
+  m_s.set_arange(1);
+  m_s.print();
+
+  linalg::dense_dynamic<double, std::layout_left> m_d(3, 3);
+  m_d.set_arange(1);
+  m_d.print();
 
   return 0;
 }
