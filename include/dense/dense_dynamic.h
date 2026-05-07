@@ -19,7 +19,7 @@ class dense_dynamic : public md::heap_storage<T>,
   using Storage = md::heap_storage<T>;
   using MultiDim = md::multi_dim_dynamic<dense_dynamic<T, Layout>, T, 2, Layout>;
   using Iterator = md::iterator_contiguous<dense_dynamic<T, Layout>, T>;
-  using FillOps = md::fill_op<dense_dynamic<T, Layout>, T>;
+  using FillOp = md::fill_op<dense_dynamic<T, Layout>, T>;
 
   // ============ 构造函数 ============
 
@@ -98,12 +98,12 @@ class dense_dynamic : public md::heap_storage<T>,
   using Iterator::crbegin;
   using Iterator::crend;
 
-  using FillOps::fill;
-  using FillOps::set_zeros;
-  using FillOps::set_ones;
-  using FillOps::set_arange;
-  using FillOps::set_random_uniform;
-  using FillOps::set_random_normal;
+  using FillOp::fill;
+  using FillOp::set_zeros;
+  using FillOp::set_ones;
+  using FillOp::set_arange;
+  using FillOp::set_random_uniform;
+  using FillOp::set_random_normal;
 
   // ============ 行列大小 ============
 

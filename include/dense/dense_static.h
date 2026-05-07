@@ -19,7 +19,7 @@ class dense_static : public md::stack_storage<T, Rows, Cols>,
   using Storage = md::stack_storage<T, Rows, Cols>;
   using MultiDim = md::multi_dim_static<dense_static<T, Rows, Cols, Layout>, T, Layout, Rows, Cols>;
   using Iterator = md::iterator_contiguous<dense_static<T, Rows, Cols, Layout>, T>;
-  using FillOps = md::fill_op<dense_static<T, Rows, Cols, Layout>, T>;
+  using FillOp = md::fill_op<dense_static<T, Rows, Cols, Layout>, T>;
 
   // ============ 构造函数 ============
 
@@ -63,12 +63,12 @@ class dense_static : public md::stack_storage<T, Rows, Cols>,
   using Iterator::crbegin;
   using Iterator::crend;
 
-  using FillOps::fill;
-  using FillOps::set_zeros;
-  using FillOps::set_ones;
-  using FillOps::set_arange;
-  using FillOps::set_random_uniform;
-  using FillOps::set_random_normal;
+  using FillOp::fill;
+  using FillOp::set_zeros;
+  using FillOp::set_ones;
+  using FillOp::set_arange;
+  using FillOp::set_random_uniform;
+  using FillOp::set_random_normal;
 
   // ============ 行列大小 ============
 
