@@ -1,6 +1,3 @@
-#ifndef __LINALG_BASE_CONCEPT__
-#define __LINALG_BASE_CONCEPT__
+#pragma once
 
 #include <concepts>
-
-#endif  // __LINALG_BASE_CONCEPT__

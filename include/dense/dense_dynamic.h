@@ -1,5 +1,4 @@
-#ifndef __LINALG_DENSE_DYNAMIC__
-#define __LINALG_DENSE_DYNAMIC__
+#pragma once
 
 #include "dense_base.h"
 #include "include_md_all.h"
@@ -112,5 +111,3 @@ class dense_dynamic : public md::heap_storage<T>,
 };
 
 }  // namespace linalg
-
-#endif  // __LINALG_DENSE_DYNAMIC__

@@ -1,5 +1,4 @@
-#ifndef __LINALG_DENSE_STATIC__
-#define __LINALG_DENSE_STATIC__
+#pragma once
 
 #include "dense_base.h"
 #include "include_md_all.h"
@@ -77,5 +76,3 @@ class dense_static : public md::stack_storage<T, Rows, Cols>,
 };
 
 }  // namespace linalg
-
-#endif  // __LINALG_DENSE_STATIC__
