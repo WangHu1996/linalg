@@ -1,11 +1,10 @@
 #pragma once
 
 #include "dense_base.h"
-#include "include_md_all.h"
 
 namespace linalg {
 
-template <typename T = double, typename Layout = std::layout_left>
+template <typename T = double, typename Layout = ColMajor>
 class dense_dynamic : public md::heap_storage<T>,
                       public md::multi_dim_dynamic<dense_dynamic<T, Layout>, T, 2, Layout>,
                       public md::iterator_contiguous<dense_dynamic<T, Layout>, T>,
@@ -108,6 +107,20 @@ class dense_dynamic : public md::heap_storage<T>,
 
   const size_t rows() const noexcept { return extent(0); }
   const size_t cols() const noexcept { return extent(1); }
+
+  // ============ 矩阵乘法 ============
+  template <class MatrixTypeB>
+  dense_dynamic operator*(const MatrixTypeB& matrix_b) {
+    bool flag = check_dim(*this, matrix_b);
+    if (!flag) {
+      auto error_message =
+          std::format("matrix dim error! left's cols:{}, right's rows:{}\n", this->cols(), matrix_b.rows());
+      std::cerr << error_message;
+    }
+    dense_dynamic matrix_result(this->rows(), matrix_b.cols());
+    matrix_multiple(*this, matrix_b, matrix_result);
+    return matrix_result;
+  }
 };
 
 }  // namespace linalg

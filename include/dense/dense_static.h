@@ -5,7 +5,7 @@
 
 namespace linalg {
 
-template <typename T, size_t Rows, size_t Cols, typename Layout = std::layout_left>
+template <typename T, size_t Rows, size_t Cols, typename Layout = ColMajor>
 class dense_static : public md::stack_storage<T, Rows, Cols>,
                      public md::multi_dim_static<dense_static<T, Rows, Cols, Layout>, T, Layout, Rows, Cols>,
                      public md::iterator_contiguous<dense_static<T, Rows, Cols, Layout>, T>,

@@ -2,11 +2,11 @@
 
 template <class MatrixTypeA, class MatrixTypeB>
 bool check_dim(const MatrixTypeA &matrix_a, const MatrixTypeB &matrix_b) {
-  return matrix_a.cols() == matrix_b.rows() && matrix_a.rows() == matrix_b.cols()
+  return matrix_a.cols() == matrix_b.rows();
 }
 
 template <class MatrixTypeA, class MatrixTypeB, class MatrixTypeC>
-void matrix_multiple(const MatrixTypeA &matrix_a, const MatrixTypeB &matrix_b, const MatrixTypeC &matrix_c) {
+void matrix_multiple(const MatrixTypeA &matrix_a, const MatrixTypeB &matrix_b, MatrixTypeC &matrix_c) {
   using T = typename MatrixTypeC::value_type;
 
   for (std::size_t i = 0; i < matrix_a.rows(); ++i) {
